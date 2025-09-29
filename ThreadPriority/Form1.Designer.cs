@@ -38,7 +38,7 @@
             this.changinglbl.BackColor = System.Drawing.Color.Transparent;
             this.changinglbl.Font = new System.Drawing.Font("Modern No. 20", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changinglbl.ForeColor = System.Drawing.Color.DarkGreen;
-            this.changinglbl.Location = new System.Drawing.Point(318, 150);
+            this.changinglbl.Location = new System.Drawing.Point(306, 171);
             this.changinglbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.changinglbl.Name = "changinglbl";
             this.changinglbl.Size = new System.Drawing.Size(176, 29);
@@ -51,13 +51,14 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.Font = new System.Drawing.Font("Nirmala Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Blue;
-            this.button1.Location = new System.Drawing.Point(359, 254);
+            this.button1.Location = new System.Drawing.Point(338, 244);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 37);
             this.button1.TabIndex = 2;
             this.button1.Text = "Run";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
