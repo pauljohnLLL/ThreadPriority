@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ThreadPriorityDemo;
 
 namespace ThreadPriority
 {
@@ -21,25 +22,27 @@ namespace ThreadPriority
         private void button1_Click(object sender, EventArgs e)
         {
             Thread threadA = new Thread(new ThreadStart(MyThreadClass.Thread1));
-            Thread ThreadB = new Thread(new ThreadStart(MyThreadClass.Thread1));
-            Thread ThreadC = new Thread(new ThreadStart(MyThreadClass.Thread1));
-            Thread ThreadD = new Thread(new ThreadStart(MyThreadClass.Thread1));
-           
-            ThreadA.Name = "Thread A Process";
-            ThreadB.Name = "Thread B Process";
-            ThreadB.Name = "Thread C Process";
-            ThreadB.Name = "Thread D Process";
+            Thread threadB = new Thread(new ThreadStart(MyThreadClass.Thread2));
+            Thread threadC = new Thread(new ThreadStart(MyThreadClass.Thread2));
+            Thread threadD = new Thread(new ThreadStart(MyThreadClass.Thread2));           
+            threadA.Name = "Thread A";
+            threadB.Name = "Thread B";
+            threadC.Name = "Thread C";
+            threadD.Name = "Thread D";       
+            threadA.Priority = System.Threading.ThreadPriority.Highest;
+            threadB.Priority = System.Threading.ThreadPriority.Normal;
+            threadC.Priority = System.Threading.ThreadPriority.AboveNormal;
+            threadD.Priority = System.Threading.ThreadPriority.BelowNormal;          
+            threadA.Start();
+            threadB.Start();
+            threadC.Start();
+            threadD.Start();
+            threadA.Join();
+            threadB.Join();
+            threadC.Join();
+            threadD.Join();
 
-            threadA.Priority = ThreadPriority.Highest;
-            ThreadB.Start();
-            ThreadB.Start();
-            ThreadB.Start();
-           
-            ThreadA.Join();
-            ThreadB.Join();
-            ThreadB.Join();
-            ThreadB.Join();
-            changinglbl.Text = "          E n d   O f   T h r e a d";
+            changinglbl.Text = "- End Of Thread -";
         }
     }
 }
