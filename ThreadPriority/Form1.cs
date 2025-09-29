@@ -42,7 +42,7 @@ namespace ThreadPriority
             threadC.Join();
             threadD.Join();
 
-            changinglbl.Text = "- End Of Thread -";
+            changinglbl.Text = "-- End Of Thread --";
         }
     }
 }
